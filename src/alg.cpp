@@ -22,15 +22,13 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-    if (checkPrime(value + 1)) return value + 1;
-    else {
-        value = value + 1;
-    }
-    return 0;
+    value = value + 1;
+    for (int i = value; ;i++)
+        if (checkPrime(i)) return i;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-    int sum = 0;
+    long sum = 0;
     for (int j = 2; j < hbound; j++) {
         if (checkPrime(j)) sum = sum + j;
     }
